@@ -15,9 +15,7 @@ export default function Home() {
       const minutes = Math.floor((diffTime / 1000 / 60) % 60);
       const hours = Math.floor((diffTime / (1000 * 60 * 60)) % 24);
       const days = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-      setTimer(
-        `${days} Days ${hours} hours ${minutes} minutes ${seconds} seconds`
-      );
+      setTimer(`${days} Days ${hours} hours ${minutes} minutes ${seconds}s`);
     }, 1000);
 
     return () => {
@@ -26,7 +24,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-24 justify-center align-middle font-bold gap-1 select-none">
+    <main className="flex min-h-screen flex-col items-center justify-center align-middle font-bold gap-1 select-none">
       <img
         src="studying.gif"
         alt="studying.gif"
