@@ -15,7 +15,9 @@ export default function Home() {
       const minutes = Math.floor((diffTime / 1000 / 60) % 60);
       const hours = Math.floor((diffTime / (1000 * 60 * 60)) % 24);
       const days = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-      setTimer(`${days} Days ${hours} hours ${minutes} minutes ${seconds}s`);
+      setTimer(
+        `${days} Days ${hours} hours ${minutes} minutes ${seconds} seconds`
+      );
     }, 1000);
 
     return () => {
