@@ -26,8 +26,14 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-24 justify-center align-middle font-bold gap-1 text-[24px]">
-      REMAINING TIME UNTIL TOEIC TEST
+    <main className="flex min-h-screen flex-col items-center p-24 justify-center align-middle font-bold gap-1 select-none">
+      <img
+        src="studying.gif"
+        alt="studying.gif"
+        loading="eager"
+        className="h-[200px] w-[200px] mb-[20px] rounded-md"
+      />
+      <span className="uppercase">Time Left Until TOEIC Test</span>
       {!timer && <CircularProgress color="primary" />}
       <span className="flex justify-center">{timer}</span>
     </main>
