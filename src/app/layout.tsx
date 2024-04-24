@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/common/header";
+import Header from "@/components/common/Header";
+import { Box, ThemeProvider } from "@mui/material";
+import theme from "@/utilities/theme";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,12 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={inter.className}
-        style={{ minHeight: "100vh", margin: 0 }}
-      >
-        <Header />
-        {children}
+      <body style={{ minHeight: "100vh", margin: 0 }}>
+        <ThemeProvider theme={theme}>
+          <Header />
+          <Box className="text-elims-textColor">{children}</Box>
+        </ThemeProvider>
       </body>
     </html>
   );
