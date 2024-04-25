@@ -22,8 +22,8 @@ const pages = [
 
 const contacts = [
   { Icon: MailOutlineIcon, href: "mailto:longbinkg@gmail.com" },
-  { Icon: LinkedInIcon, href: "https://www.linkedin.com/in/philongtran102" },
-  { Icon: GitHubIcon, href: "https://github.com/ElimsTran" },
+  // { Icon: LinkedInIcon, href: "https://www.linkedin.com/in/philongtran102" },
+  // { Icon: GitHubIcon, href: "https://github.com/ElimsTran" },
 ];
 
 export default function Header() {
