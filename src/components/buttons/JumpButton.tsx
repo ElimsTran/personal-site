@@ -3,7 +3,7 @@ type JumpButtonProps = {
   onClick: () => void;
 };
 
-import { Button, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 export default function JumpButton(props: JumpButtonProps) {
   const handleClick = () => {
     props.onClick();

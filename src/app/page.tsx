@@ -1,13 +1,11 @@
 "use client";
 import { Box, Container, Divider, IconButton, Typography } from "@mui/material";
 import { INTRODUCE_SENTENCE } from "../constants";
-import JumpButton from "@/components/buttons/JumpButton";
 import Image from "next/image";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import CodeIcon from "@mui/icons-material/Code";
 export default function Home() {
   const contacts = [
     { Icon: FacebookIcon, href: "https://www.facebook.com/PykaSmile" },
@@ -56,7 +54,7 @@ export default function Home() {
           </Box>
         </Box>
       </Box>
-      <JumpButton onClick={() => {}} />
+      {/* <JumpButton onClick={() => {}} /> */}
     </Container>
   );
 }
