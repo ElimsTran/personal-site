@@ -12,11 +12,12 @@
 :root {
   font-family: "Prompt-Regular", sans-serif;
   --background-color: #181928;
+  --text-color: #FFF;
 }
 
 body {
-
   background: var(--background-color);
+  text: var(--text-color) !important;
 }
 
 .reveal-animation {

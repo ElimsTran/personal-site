@@ -3,6 +3,7 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Link from "next/link";
+import SpotifyPlaylist from "../ultilities/SpotifyPlaylist";
 
 const pages = [
   {
@@ -27,10 +28,10 @@ const contacts = [
 
 export default function Header() {
   return (
-    <Box className="bg-elims-backgroundColorLight">
+    <Box className="bg-elims-backgroundColorLight text-elims-textColor">
       <Container
         maxWidth="xl"
-        className="flex justify-between sticky top-0 py-3 backdrop-blur-3xl text-elims-textColor"
+        className="flex justify-between sticky top-0 py-3 backdrop-blur-3xl "
       >
         <Box className="gap-5 md:px-10 flex">
           {pages.map((page) => {
@@ -61,6 +62,7 @@ export default function Header() {
           })}
         </Box>
       </Container>
+      <SpotifyPlaylist link="https://open.spotify.com/playlist/5iklb65eaqPsfi5jRJyoZA?si=12b8e4edf7e24f6e" />
     </Box>
   );
 }

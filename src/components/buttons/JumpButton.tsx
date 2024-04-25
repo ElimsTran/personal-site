@@ -10,7 +10,7 @@ export default function JumpButton(props: JumpButtonProps) {
   };
   return (
     <IconButton
-      className="sticky top-[100vh] left-[calc(50vw-10px)] bg-elims-backgroundColorLight p-1 jump-animation w-fit"
+      className="fixed bottom-[65px] left-[calc(50vw-20px)] bg-elims-backgroundColorLight p-1 jump-animation w-fit"
       onClick={handleClick}
       color="inherit"
     >

@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/common/Header";
 import { Box, ThemeProvider } from "@mui/material";
 import theme from "@/utilities/theme";
+import Footer from "@/components/common/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +27,7 @@ export default function RootLayout({
         <ThemeProvider theme={theme}>
           <Header />
           <Box className="text-elims-textColor">{children}</Box>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
