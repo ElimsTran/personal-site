@@ -28,7 +28,7 @@ const contacts = [
 
 export default function Header() {
   return (
-    <Box className="bg-elims-backgroundColorLight text-elims-textColor">
+    <Box className="bg-elims-backgroundColorLight text-elims-textColor sticky top-0 z-50 border shadow-xl">
       <Container
         maxWidth="xl"
         className="flex justify-between sticky top-0 py-3 backdrop-blur-3xl "
@@ -38,7 +38,7 @@ export default function Header() {
             return (
               <Link
                 key={page.name}
-                className="no-underline text-center text-inherit flex items-center whitespace-nowrap text-elims-textColor "
+                className="no-underline text-center text-inherit flex items-center whitespace-nowrap text-elims-textColor"
                 href={page.href}
               >
                 {page.name}
