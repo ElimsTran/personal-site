@@ -15,8 +15,8 @@ export default function Home() {
   ];
 
   return (
-    <Container component={"main"} maxWidth="md" className="flex flex-col p-0 ">
-      <Box className="flex flex-col items-center justify-center align-middle gap-2 select-none min-h-[88vh] ">
+    <Container component={"main"} maxWidth="md" className="flex flex-col">
+      <Box className="flex flex-col items-center justify-center align-middle gap-2 select-none min-h-[84vh] ">
         <Box className="p-5 rounded-md text-justify triangle-left bg-elims-backgroundColorLight w-auto max-w-[370px]">
           {INTRODUCE_SENTENCE}
         </Box>

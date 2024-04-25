@@ -20,6 +20,19 @@ body {
   text: var(--text-color) !important;
 }
 
+body::-webkit-scrollbar {
+  width: 4px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #aaa9b0;
+  border-radius: 4px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #0000;
+}
+
 .reveal-animation {
   animation: reveal 0.2s ease-in forwards;
   overflow: hidden;

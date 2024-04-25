@@ -26,7 +26,7 @@ export default function RootLayout({
       <body style={{ minHeight: "100vh", margin: 0 }}>
         <ThemeProvider theme={theme}>
           <Header />
-          <Box className="text-elims-textColor">{children}</Box>
+          <Box className="text-elims-textColor py-5">{children}</Box>
           <Footer />
         </ThemeProvider>
       </body>
