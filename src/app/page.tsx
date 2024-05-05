@@ -1,11 +1,12 @@
 "use client";
-import { Box, Container, Divider, IconButton, Typography } from "@mui/material";
+import { Box, Container, IconButton, Typography } from "@mui/material";
 import { INTRODUCE_SENTENCE } from "../constants";
 import Image from "next/image";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import JumpButton from "@/components/buttons/JumpButton";
 export default function Home() {
   const contacts = [
     { Icon: FacebookIcon, href: "https://www.facebook.com/PykaSmile" },
@@ -15,8 +16,12 @@ export default function Home() {
   ];
 
   return (
-    <Container component={"main"} maxWidth="md" className="flex flex-col">
-      <Box className="flex flex-col items-center justify-center align-middle gap-2 select-none min-h-[84vh] ">
+    <Container
+      component={"main"}
+      maxWidth="md"
+      className="flex flex-col  min-h-[85vh] "
+    >
+      <Box className="flex flex-col items-center justify-start gap-2 select-none pt-[7vh] min-h-[70vh]">
         <Box className="p-5 rounded-md text-justify triangle-left bg-elims-backgroundColorLight w-auto max-w-[370px] shadow-lg shadow-elims-backgroundColorDark">
           {INTRODUCE_SENTENCE}
         </Box>
@@ -52,9 +57,40 @@ export default function Home() {
               );
             })}
           </Box>
+
+          <Box className="flex flex-col justify-start items-start p-1 mt-4">
+            {/* <Typography
+              component={"h3"}
+              fontSize={20}
+              fontWeight={600}
+              className="pb-4"
+            >
+              About me
+            </Typography> */}
+            <Box className="flex flex-wrap justify-center gap-5">
+              <Box className="p-2 rounded-lg text-justify text-sm bg-elims-backgroundColorLight w-auto max-w-[370px] shadow-lg shadow-elims-backgroundColorDark">
+                Software engineer
+              </Box>
+              <Box className="p-2 rounded-lg text-justify text-sm bg-elims-backgroundColorLight w-auto max-w-[370px] shadow-lg shadow-elims-backgroundColorDark">
+                HCM University of Science
+              </Box>
+              <Box className="p-2 rounded-lg text-justify text-sm bg-elims-backgroundColorLight w-auto max-w-[370px] shadow-lg shadow-elims-backgroundColorDark">
+                Ho Chi Minh City
+              </Box>
+              <Box className="p-2 rounded-lg text-justify text-sm bg-elims-backgroundColorLight w-auto max-w-[370px] shadow-lg shadow-elims-backgroundColorDark">
+                HuMaDa
+              </Box>
+              <Box className="p-2 rounded-lg text-justify text-sm bg-elims-backgroundColorLight w-auto max-w-[370px] shadow-lg shadow-elims-backgroundColorDark">
+                Workout
+              </Box>
+              <Box className="p-2 rounded-lg text-justify text-sm bg-elims-backgroundColorLight w-auto max-w-[370px] shadow-lg shadow-elims-backgroundColorDark">
+                Music
+              </Box>
+            </Box>
+          </Box>
         </Box>
       </Box>
-      {/* <JumpButton onClick={() => {}} /> */}
+      {/* <JumpButton /> */}
     </Container>
   );
 }

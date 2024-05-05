@@ -5,6 +5,8 @@ import Header from "@/components/common/Header";
 import { Box, ThemeProvider } from "@mui/material";
 import theme from "@/utilities/theme";
 import Footer from "@/components/common/Footer";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const inter = Inter({ subsets: ["latin"] });
 
