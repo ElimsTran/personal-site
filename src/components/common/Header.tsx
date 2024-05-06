@@ -38,7 +38,7 @@ export default function Header() {
     <Box className="bg-elims-backgroundColorLight text-elims-textColor sticky top-0 z-50 border shadow-xl">
       <Container
         maxWidth="xl"
-        className="flex justify-between sticky top-0 py-3 backdrop-blur-3xl "
+        className="flex justify-between sticky top-0 py-3"
       >
         <Box className="gap-5 md:px-10 flex">
           {pages.map((page) => {
@@ -47,9 +47,9 @@ export default function Header() {
                 key={page.name}
                 className={`${
                   params !== page.href
-                    ? "no-underline hover:text-elims-hoverColor hover:-translate-y-[2px] transition text-elims-textColor"
-                    : "underline font-bold text-elims-hoverColor underline-offset-8 select-none cursor-default"
-                } text-center text-inherit flex items-center whitespace-nowrap`}
+                    ? "no-underline hover:text-elims-hoverColor hover:-translate-y-[2px] transition text-elims-textColor "
+                    : "underline font-bold text-elims-hoverColor underline-offset-8 select-none cursor-default "
+                }text-center text-inherit flex items-center whitespace-nowrap`}
                 href={page.href}
               >
                 {page.name}
