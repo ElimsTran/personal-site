@@ -9,7 +9,7 @@ export default function Loading() {
         loading={"eager"}
         width={200}
         height={150}
-        className="rounded-lg"
+        className="rounded-lg -translate-y-20"
       />
     </Box>
   );

@@ -11,10 +11,13 @@ import Loading from "./loading";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Elims's Site",
+  title: "Elims Zone",
   description: "Phi Long portfolio",
   icons: {
-    icon: "elims.jpg",
+    icon: "/elims.jpg",
+  },
+  openGraph: {
+    images: "/elims.jpg",
   },
 };
 

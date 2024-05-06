@@ -14,18 +14,17 @@ const contacts = [
   { Icon: LinkedInIcon, href: "https://www.linkedin.com/in/philongtran102" },
 ];
 const aboutMe = [
-  "Software engineer",
+  "Software Engineer",
   "HCM University of Science",
   "Ho Chi Minh City",
-  "HuMaDa",
   "Workout",
-  "Music",
   "Video Game",
+  "Music",
 ];
 export default function Home() {
   return (
     <Container component={"main"} maxWidth="md" className="flex flex-col">
-      <Box className="flex flex-col items-center justify-start gap-2 select-none pt-[15vh]">
+      <Box className="flex flex-col items-center justify-start gap-2 select-none pt-[10vh]">
         <Box className="p-5 rounded-md text-justify triangle-left bg-elims-backgroundColorLight w-auto max-w-[420px] shadow-lg shadow-elims-backgroundColorDark">
           {INTRODUCE_SENTENCE}
         </Box>
@@ -58,6 +57,19 @@ export default function Home() {
                 >
                   <Icon fontSize="small" />
                 </IconButton>
+              );
+            })}
+          </Box>
+
+          <Box className="gap-2 flex flex-wrap mt-5 max-w-[330px] md:max-w-[410px] justify-around">
+            {aboutMe.map((text) => {
+              return (
+                <Box
+                  key={text}
+                  className="border-solid border-[1px] border-elims-backgroundColorLight p-1 rounded-md text-xs bg-elims-backgroundColorLight"
+                >
+                  {text}
+                </Box>
               );
             })}
           </Box>

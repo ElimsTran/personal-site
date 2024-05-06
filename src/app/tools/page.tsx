@@ -1,3 +1,5 @@
+import Loading from "../loading";
+
 export default function page() {
-  return <></>;
+  return <Loading></Loading>;
 }
