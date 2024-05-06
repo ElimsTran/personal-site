@@ -28,6 +28,7 @@ const config: Config = {
         backgroundColorLight: "#2f3045",
         backgroundColorDark: "#19151c",
         backgroundColorMedium: "#181928",
+        hoverColor: "#ffc107",
       },
 
       DEFAULT: "#938d9e",

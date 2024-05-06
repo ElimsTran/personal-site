@@ -1,7 +1,10 @@
+"use client";
 import { Box, Container, IconButton } from "@mui/material";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import Link from "next/link";
-import SpotifyPlaylist from "../ultilities/SpotifyPlaylist";
+import SpotifyPlaylist from "../utilities/SpotifyPlaylist";
+import { useMemo } from "react";
+import { usePathname } from "next/navigation";
 
 const pages = [
   {
@@ -9,12 +12,16 @@ const pages = [
     href: "/",
   },
   {
-    name: "About Me",
-    href: "/#about-me",
+    name: "Tools",
+    href: "/tools",
   },
   {
-    name: "Projects",
-    href: "/#projects",
+    name: "Blogs",
+    href: "/blogs",
+  },
+  {
+    name: "About me",
+    href: "/about-me",
   },
 ];
 
@@ -25,6 +32,8 @@ const contacts = [
 ];
 
 export default function Header() {
+  const params = usePathname();
+
   return (
     <Box className="bg-elims-backgroundColorLight text-elims-textColor sticky top-0 z-50 border shadow-xl">
       <Container
@@ -36,7 +45,11 @@ export default function Header() {
             return (
               <Link
                 key={page.name}
-                className="no-underline text-center text-inherit flex items-center whitespace-nowrap text-elims-textColor"
+                className={`${
+                  params !== page.href
+                    ? "no-underline hover:text-elims-hoverColor hover:-translate-y-[2px] transition text-elims-textColor"
+                    : "underline font-bold text-elims-hoverColor underline-offset-8 select-none cursor-default"
+                } text-center text-inherit flex items-center whitespace-nowrap`}
                 href={page.href}
               >
                 {page.name}
@@ -53,6 +66,7 @@ export default function Header() {
                 size="large"
                 color="inherit"
                 target="_blank"
+                className="hover:text-elims-hoverColor hover:-translate-y-[2px] transition"
               >
                 <Icon fontSize="small" />
               </IconButton>
