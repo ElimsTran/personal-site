@@ -14,10 +14,10 @@ export const metadata: Metadata = {
   title: "Elims Zone",
   description: "Phi Long portfolio",
   icons: {
-    icon: "/elims.jpg",
+    icon: "/public/elims.jpg",
   },
   openGraph: {
-    images: "/elims.jpg",
+    images: "/public/elims.jpg",
   },
 };
 
