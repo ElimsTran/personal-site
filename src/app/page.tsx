@@ -7,6 +7,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import JumpButton from "@/components/buttons/JumpButton";
+
 const contacts = [
   { Icon: FacebookIcon, href: "https://www.facebook.com/PykaSmile" },
   { Icon: InstagramIcon, href: "https://www.instagram.com/_phiilonggg" },
@@ -21,6 +22,7 @@ const aboutMe = [
   "Video Game",
   "Music",
 ];
+
 export default function Home() {
   return (
     <Container component={"main"} maxWidth="md" className="flex flex-col">
