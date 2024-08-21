@@ -6,7 +6,6 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import JumpButton from "@/components/buttons/JumpButton";
 
 const contacts = [
   { Icon: FacebookIcon, href: "https://www.facebook.com/PykaSmile" },
@@ -41,10 +40,10 @@ export default function Home() {
             />
           </Box>
           <Box className="flex flex-col justify-center items-center">
-            <Typography component={"h3"} fontSize={30} fontWeight={600}>
+            <Typography component={"h1"} fontSize={30} fontWeight={600}>
               Trần Phi Long
             </Typography>
-            <Typography component={"h3"}>Software Engineer</Typography>
+            <Typography component={"h1"}>Software Engineer</Typography>
           </Box>
 
           <Box className="gap-2 flex">
