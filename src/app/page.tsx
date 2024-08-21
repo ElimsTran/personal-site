@@ -14,11 +14,11 @@ const contacts = [
   { Icon: LinkedInIcon, href: "https://www.linkedin.com/in/philongtran102" },
 ];
 const aboutMe = [
-  "Software Engineer",
+  "Web Developer",
   "HCM University of Science",
   "Ho Chi Minh City",
   "Workout",
-  "Video Game",
+  "Video Editer",
   "Music",
 ];
 
@@ -46,7 +46,7 @@ export default function Home() {
             <Typography component={"h1"}>Software Engineer</Typography>
           </Box>
 
-          <Box className="gap-2 flex">
+          <Box className="gap-2 text-center border-0  border-b-2 py-1 border-solid border-red">
             {contacts.map(({ Icon, href }) => {
               return (
                 <IconButton

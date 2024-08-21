@@ -12,10 +12,17 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Elims Zone",
-    template: "%s - Elims Zone",
+    default: "Elims's Zone",
+    template: "%s - Elims's Zone",
   },
   description: "Phi Long's websites - created for share knowledge and hobbies",
+  openGraph: {
+    title: "Elims's Zone",
+    description:
+      "Phi Long's websites - created for share knowledge and hobbies",
+    type: "website",
+    // images: ['']
+  },
 };
 
 export default function RootLayout({

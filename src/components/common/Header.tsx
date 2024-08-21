@@ -1,6 +1,7 @@
 "use client";
 import { Box, Container, IconButton } from "@mui/material";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Link from "next/link";
 import SpotifyPlaylist from "../utilities/SpotifyPlaylist";
 import { useMemo } from "react";
@@ -12,6 +13,10 @@ const pages = [
     href: "/",
   },
   {
+    name: "About me",
+    href: "/about-me",
+  },
+  {
     name: "Tools",
     href: "/tools",
   },
@@ -19,15 +24,11 @@ const pages = [
     name: "Blogs",
     href: "/blogs",
   },
-  {
-    name: "About me",
-    href: "/about-me",
-  },
 ];
 
 const contacts = [
   { Icon: MailOutlineIcon, href: "mailto:longbinkg@gmail.com" },
-  // { Icon: LinkedInIcon, href: "https://www.linkedin.com/in/philongtran102" },
+  { Icon: LinkedInIcon, href: "https://www.linkedin.com/in/philongtran102" },
   // { Icon: GitHubIcon, href: "https://github.com/ElimsTran" },
 ];
 
