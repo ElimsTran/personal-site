@@ -1,6 +1,5 @@
 "use client";
-import { Box, Container, IconButton, Typography } from "@mui/material";
-import { INTRODUCE_SENTENCE } from "../constants";
+import { Box, Button, Container, IconButton, Typography } from "@mui/material";
 import Image from "next/image";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -14,20 +13,23 @@ const contacts = [
   { Icon: LinkedInIcon, href: "https://www.linkedin.com/in/philongtran102" },
 ];
 const aboutMe = [
-  "Web Developer",
+  "Software Engineer",
   "HCM University of Science",
   "Ho Chi Minh City",
-  "Workout",
+  "Web Developer",
   "Video Editer",
   "Music",
+  "Travel",
 ];
 
 export default function Home() {
   return (
     <Container component={"main"} maxWidth="md" className="flex flex-col">
       <Box className="flex flex-col items-center justify-start gap-2 select-none pt-[10vh]">
-        <Box className="p-5 rounded-md text-justify triangle-left bg-elims-backgroundColorLight w-auto max-w-[420px] shadow-lg shadow-elims-backgroundColorDark">
-          {INTRODUCE_SENTENCE}
+        <Box className="p-5 rounded-md text-justify triangle-left bg-elims-backgroundColorLight w-auto max-w-[440px] shadow-lg shadow-elims-backgroundColorDark">
+          {
+            "Welcome to my space! I'm Long, a software engineer. I've created this website to share my hobbies. If you’re interested in hiring me or need assistance, feel free to contact me using the information below. I hope you find valuable content here. Enjoy your visit!"
+          }
         </Box>
         <Box className="flex flex-col justify-center items-center gap-5">
           <Box className="w-[150px] h-[150px] rounded-[50%] flex items-center justify-center overflow-hidden shadow-lg shadow-elims-backgroundColorDark reveal-animation bg-[url('/pixelRoom.jpg')] bg-fixed bg-contain">
@@ -40,29 +42,38 @@ export default function Home() {
             />
           </Box>
           <Box className="flex flex-col justify-center items-center">
-            <Typography component={"h1"} fontSize={30} fontWeight={600}>
+            <Typography component={"h1"} className="hidden">
+              Name and Major
+            </Typography>
+            <Typography component={"h2"} fontSize={30} fontWeight={600}>
               Trần Phi Long
             </Typography>
-            <Typography component={"h1"}>Software Engineer</Typography>
+            <Box className="gap-2 text-center">
+              <Typography component={"h1"} className="hidden">
+                Contacts
+              </Typography>
+              <Box className="border-0">
+                {contacts.map(({ Icon, href }) => {
+                  return (
+                    <IconButton
+                      key={href}
+                      href={href}
+                      size="large"
+                      target="_blank"
+                      className="hover:text-elims-hoverColor hover:scale-110 text-elims-textColor transition ease-in-out"
+                    >
+                      <Icon fontSize="small" />
+                    </IconButton>
+                  );
+                })}
+              </Box>
+            </Box>
           </Box>
 
-          <Box className="gap-2 text-center border-0  border-b-2 py-1 border-solid border-red">
-            {contacts.map(({ Icon, href }) => {
-              return (
-                <IconButton
-                  key={href}
-                  href={href}
-                  size="large"
-                  target="_blank"
-                  className="hover:text-elims-hoverColor hover:scale-110 text-elims-textColor transition ease-in-out"
-                >
-                  <Icon fontSize="small" />
-                </IconButton>
-              );
-            })}
-          </Box>
-
-          <Box className="gap-2 flex flex-wrap mt-5 max-w-[330px] md:max-w-[410px] justify-around">
+          <Box className="gap-1 flex flex-wrap mt-5 max-w-[330px] md:max-w-[410px] justify-around">
+            <Typography component={"h1"} className="hidden">
+              Skills
+            </Typography>
             {aboutMe.map((text) => {
               return (
                 <Box
@@ -74,10 +85,23 @@ export default function Home() {
               );
             })}
           </Box>
+
+          <Box className="flex flex-wrap justify-around mt-[50px]">
+            <Typography component={"h1"} className="hidden">
+              Resume
+            </Typography>
+            <Typography component={"p"}>
+              For more information, you can view my{" "}
+              <a
+                href="/Resume_Tran-Phi-Long.pdf"
+                className="text-elims-hoverColor"
+              >
+                resume
+              </a>
+            </Typography>
+          </Box>
         </Box>
       </Box>
-      {/* <JumpButton /> */}
-      {/* <Box className="flex flex-col justify-start items-start p-1 mt-4 min-h-[calc(100vh-160px)"></Box> */}
     </Container>
   );
 }
