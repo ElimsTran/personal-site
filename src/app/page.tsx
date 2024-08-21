@@ -18,8 +18,6 @@ const aboutMe = [
   "Ho Chi Minh City",
   "Web Developer",
   "Video Editer",
-  "Music",
-  "Travel",
 ];
 
 export default function Home() {
