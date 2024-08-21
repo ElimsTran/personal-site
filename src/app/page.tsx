@@ -77,8 +77,8 @@ export default function Home() {
           </Box>
         </Box>
       </Box>
-      <JumpButton />
-      <Box className="flex flex-col justify-start items-start p-1 mt-4 min-h-[calc(100vh-160px)"></Box>
+      {/* <JumpButton /> */}
+      {/* <Box className="flex flex-col justify-start items-start p-1 mt-4 min-h-[calc(100vh-160px)"></Box> */}
     </Container>
   );
 }
