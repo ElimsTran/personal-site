@@ -12,9 +12,6 @@ export default function Loading() {
         height={150}
         className="rounded-lg"
       />
-      <p className="animate- overflow-hidden whitespace-nowrap -translate-y-3 text-[14px]">
-        The monkey is developing something
-      </p>
     </Box>
   );
 }
