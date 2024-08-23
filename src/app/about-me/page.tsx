@@ -11,7 +11,7 @@ export default function page() {
         <Typography component={"h1"} fontSize={25} fontWeight={600}>
           Introduce
         </Typography>
-        <Typography component={"p"} className="mx-8 my-4 text-justify ">
+        <Typography component={"p"} className="mx-2 md:mx-8 my-4 text-justify ">
           Hi you guys, I am a software engineer from Việt Nam, currently working
           as a full-stack web developer. I have a strong passion for programming
           and believe that technology makes life more convenient.
@@ -33,15 +33,19 @@ export default function page() {
           Experience
         </Typography>
 
-        <Box className="mx-10 my-4">
+        <Box className="mx-2 md:mx-8 my-4">
           <Box className="flex flex-row justify-between">
-            <Box className="">
+            <Box className="border-solid border-0 border-l-2 pl-2">
               <Typography
                 component={"h2"}
-                fontSize={18}
-                className="text-elims-hoverColor"
+                className=" md:text-[18px] font-semibold"
               >
-                Fujinet Systems JSC
+                <a
+                  href="https://www.fujinet.net/"
+                  className="text-elims-hoverColor"
+                >
+                  Fujinet Systems JSC
+                </a>
               </Typography>
               <Typography component={"p"}>Web developer</Typography>
             </Box>
@@ -52,7 +56,7 @@ export default function page() {
               06/2021 - 09/2023
             </Typography>
           </Box>
-          <Box className="mx-10 mt-4 text-justif">
+          <Box className="mx-2 md:mx-8 my-4 text-justify">
             <Typography component={"h2"}>Role:</Typography>
             <Typography component={"ul"} className="[&>li]:mb-6">
               <Typography component={"li"}>
@@ -85,7 +89,7 @@ export default function page() {
               </Typography>
             </Typography>
           </Box>
-          <Box className="mx-10 mt-4 text-justif">
+          <Box className="mx-2 md:mx-8 my-4 text-justify">
             <Typography component={"h2"}>Technologies:</Typography>
             <Typography component={"ul"} className="[&>li]:mb-6">
               <Typography component={"li"}>
