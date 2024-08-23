@@ -1,5 +1,6 @@
 import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 export default function page() {
   return (
     <Container
@@ -11,7 +12,7 @@ export default function page() {
         <Typography component={"h1"} fontSize={25} fontWeight={600}>
           Introduce
         </Typography>
-        <Typography component={"p"} className="mx-2 md:mx-8 my-4 text-justify ">
+        <Typography component={"p"} className="px-2 md:px-8 py-4 text-justify ">
           Hi you guys, I am a software engineer from Việt Nam, currently working
           as a full-stack web developer. I have a strong passion for programming
           and believe that technology makes life more convenient.
@@ -33,19 +34,18 @@ export default function page() {
           Experience
         </Typography>
 
-        <Box className="mx-2 md:mx-8 my-4">
-          <Box className="flex flex-row justify-between">
+        <Box className="px-2 md:px-8 py-4">
+          <Box
+            className="flex flex-row justify-between hover:cursor-pointer hover:bg-opacity-5 hover:bg-elims-hoverColor transition-all pr-2"
+            component={"label"}
+            htmlFor="open-detail--fjn"
+          >
             <Box className="border-solid border-0 border-l-2 pl-2">
               <Typography
                 component={"h2"}
-                className=" md:text-[18px] font-semibold"
+                className=" md:text-[18px] font-semibold text-elims-hoverColor"
               >
-                <a
-                  href="https://www.fujinet.net/"
-                  className="text-elims-hoverColor"
-                >
-                  Fujinet Systems JSC
-                </a>
+                Fujinet Systems JSC
               </Typography>
               <Typography component={"p"}>Web developer</Typography>
             </Box>
@@ -56,59 +56,71 @@ export default function page() {
               06/2021 - 09/2023
             </Typography>
           </Box>
-          <Box className="mx-2 md:mx-8 my-4 text-justify">
-            <Typography component={"h2"}>Role:</Typography>
-            <Typography component={"ul"} className="[&>li]:mb-6">
-              <Typography component={"li"}>
-                Contributed to the maintenance and development of web
-                applications based on the .NET Framework and Microsoft Graph
-                API, as well as Azure Cloud Services (Azure Web App Service,
-                Azure Bot Service, and Azure Functions).
+
+          <input
+            type="checkbox"
+            name="open-detail--fjn"
+            id="open-detail--fjn"
+            className=" [&:not(:checked)~.detail]:max-h-[0px] invisible absolute"
+          />
+          <Box className="detail transition-all duration-1000 ease-in-out max-h-[1000px] relative">
+            <Box className="absolute right-3 -top-6 detail_open-icon flex">
+              <ExpandMoreIcon></ExpandMoreIcon>
+            </Box>
+            <Box className="px-2 md:px-8 py-4 text-justify">
+              <Typography component={"h2"}>Role:</Typography>
+              <Typography component={"ul"} className="[&>li]:mb-6">
+                <Typography component={"li"}>
+                  Contributed to the maintenance and development of web
+                  applications based on the .NET Framework and Microsoft Graph
+                  API, as well as Azure Cloud Services (Azure Web App Service,
+                  Azure Bot Service, and Azure Functions).
+                </Typography>
+                <Typography component={"li"}>
+                  Contributed to the maintenance and development of SharePoint
+                  web parts using the SharePoint Web Part Framework (SPFx).
+                </Typography>
+                <Typography component={"li"}>
+                  Migrate Azure Bot Chat Knowledge Base from QnA Maker to Azure
+                  Language Studio, and integrate bot chat into SharePoint web
+                  part and Microsoft Team App.
+                </Typography>
+                <Typography component={"li"}>
+                  Monitor Azure Function operations and fix errors when problems
+                  occur.
+                </Typography>
+                <Typography component={"li"}>
+                  Utilized Editor JS to implement a blog creation feature for
+                  the web application.
+                </Typography>
+                <Typography component={"li"}>
+                  Contributed to the development of a web application based on
+                  Spring Boot for warehouse management, incorporating camera to
+                  scan barcodes and QR codes.
+                </Typography>
               </Typography>
-              <Typography component={"li"}>
-                Contributed to the maintenance and development of SharePoint web
-                parts using the SharePoint Web Part Framework (SPFx).
+            </Box>
+            <Box className="px-2 md:px-8 py-4 text-justify">
+              <Typography component={"h2"}>Technologies:</Typography>
+              <Typography component={"ul"} className="[&>li]:mb-6">
+                <Typography component={"li"}>
+                  Back-end: NET Framework, Spring Boot, MyBatis, LinQ, Restful
+                  API.
+                </Typography>
+                <Typography component={"li"}>
+                  Front-end: React JS & TS, SharePoint Web Part Framework(SPFx),
+                  Editor JS, JQuery, Bootstrap.
+                </Typography>
+                <Typography component={"li"}>
+                  Database: SQL databases (PostgreSQL, SQL Server).
+                </Typography>
+                <Typography component={"li"}>
+                  Cloud Services: Microsoft Graph API, Azure Cloud Services
+                  (Azure Web App Service, Azure Bot Service, Azure Function,
+                  Azure Blob Storage).
+                </Typography>
               </Typography>
-              <Typography component={"li"}>
-                Migrate Azure Bot Chat Knowledge Base from QnA Maker to Azure
-                Language Studio, and integrate bot chat into SharePoint web part
-                and Microsoft Team App.
-              </Typography>
-              <Typography component={"li"}>
-                Monitor Azure Function operations and fix errors when problems
-                occur.
-              </Typography>
-              <Typography component={"li"}>
-                Utilized Editor JS to implement a blog creation feature for the
-                web application.
-              </Typography>
-              <Typography component={"li"}>
-                Contributed to the development of a web application based on
-                Spring Boot for warehouse management, incorporating camera to
-                scan barcodes and QR codes.
-              </Typography>
-            </Typography>
-          </Box>
-          <Box className="mx-2 md:mx-8 my-4 text-justify">
-            <Typography component={"h2"}>Technologies:</Typography>
-            <Typography component={"ul"} className="[&>li]:mb-6">
-              <Typography component={"li"}>
-                Back-end: NET Framework, Spring Boot, MyBatis, LinQ, Restful
-                API.
-              </Typography>
-              <Typography component={"li"}>
-                Front-end: React JS & TS, SharePoint Web Part Framework(SPFx),
-                Editor JS, JQuery, Bootstrap.
-              </Typography>
-              <Typography component={"li"}>
-                Database: SQL databases (PostgreSQL, SQL Server).
-              </Typography>
-              <Typography component={"li"}>
-                Cloud Services: Microsoft Graph API, Azure Cloud Services (Azure
-                Web App Service, Azure Bot Service, Azure Function, Azure Blob
-                Storage).
-              </Typography>
-            </Typography>
+            </Box>
           </Box>
         </Box>
       </Box>
