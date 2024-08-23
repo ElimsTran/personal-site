@@ -61,9 +61,9 @@ export default function page() {
             type="checkbox"
             name="open-detail--fjn"
             id="open-detail--fjn"
-            className=" [&:not(:checked)~.detail]:max-h-[0px] invisible absolute"
+            className=" [&:checked~.detail]:max-h-[0px] invisible absolute "
           />
-          <Box className="detail transition-all duration-1000 ease-in-out max-h-[1000px] relative">
+          <Box className="detail transition-all duration-1000 ease-in-out max-h-[2000px] relative">
             <Box className="absolute right-3 -top-6 detail_open-icon flex">
               <ExpandMoreIcon></ExpandMoreIcon>
             </Box>
@@ -157,7 +157,7 @@ export default function page() {
                 alt="Hcmus.logo"
                 loading={"eager"}
                 width={90}
-                height={27}
+                height={20}
                 className="inline-block bg-elims-textColor"
               />
             </Box>
