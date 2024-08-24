@@ -61,7 +61,7 @@ export default function page() {
             type="checkbox"
             name="open-detail--fjn"
             id="open-detail--fjn"
-            className=" [&:checked~.detail]:max-h-[0px] invisible absolute "
+            className=" [&:not(:checked)~.detail]:max-h-[0px] invisible absolute "
           />
           <Box className="detail transition-all duration-1000 ease-in-out max-h-[2000px] relative">
             <Box className="absolute right-3 -top-6 detail_open-icon flex">
@@ -125,17 +125,12 @@ export default function page() {
         </Box>
       </Box>
 
-      <Box className="reveal-animation">
-        <Typography
-          component={"h1"}
-          fontSize={25}
-          fontWeight={600}
-          id="educations"
-        >
+      <Box className="reveal-animation" id="educations">
+        <Typography component={"h1"} fontSize={25} fontWeight={600}>
           Educations & Certificates
         </Typography>
 
-        <Box className="ml-8 my-4 p-0 flex flex-wrap gap-[10%] justify-around">
+        <Box className="my-4 p-0 flex flex-wrap gap-[10%] justify-around">
           <Box className="flex flex-col text-center justify-center items-center gap-2 m-3">
             <Image
               src={"/logo_cert/hcmus.png"}
