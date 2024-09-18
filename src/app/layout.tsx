@@ -7,6 +7,7 @@ import theme from "@/utilities/theme";
 import Footer from "@/components/common/Footer";
 import { Suspense } from "react";
 import Loading from "./loading";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,6 +33,7 @@ export default function RootLayout({
             <Box className="text-elims-textColor py-5 min-h-[calc(100vh-160px)]">
               {children}
             </Box>
+            <SpeedInsights />
             <Footer />
           </Suspense>
         </ThemeProvider>
