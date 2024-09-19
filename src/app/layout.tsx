@@ -12,6 +12,22 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://elims-zone.xyz"),
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en-US": "/en-US",
+      "de-DE": "/de-DE",
+    },
+  },
+  keywords: [
+    "Elims's Zone",
+    "Trần Phi Long",
+    "Tran Phi Long",
+    "Elims Zone",
+    "Elims",
+  ],
+  authors: [{ name: "Tran Phi Long" }, { name: "Elims" }],
   title: {
     default: "Elims's Zone",
     template: "%s - Elims's Zone",
