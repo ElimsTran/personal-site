@@ -10,7 +10,7 @@ const contacts = [
   { Icon: FacebookIcon, href: "https://www.facebook.com/PykaSmile" },
   { Icon: InstagramIcon, href: "https://www.instagram.com/_phiilonggg" },
   { Icon: GitHubIcon, href: "https://github.com/ElimsTran" },
-  { Icon: LinkedInIcon, href: "https://www.linkedin.com/in/philongtran102" },
+  { Icon: LinkedInIcon, href: "https://www.linkedin.com/in/philong102" },
 ];
 const aboutMe = [
   "Software Engineer",
