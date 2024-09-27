@@ -5,6 +5,9 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import FormContact from "@/components/formContact/FormContact";
+import JumpButton from "@/components/buttons/JumpButton";
+import { useEffect, useState } from "react";
 
 const contacts = [
   { Icon: FacebookIcon, href: "https://www.facebook.com/PykaSmile" },
@@ -21,9 +24,26 @@ const aboutMe = [
 ];
 
 export default function Home() {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <Container component={"main"} maxWidth="md" className="flex flex-col">
-      <Box className="flex flex-col items-center justify-start gap-2 select-none pt-[10vh]">
+    <Container component={"main"} maxWidth="md" className="flex flex-col ">
+      <Box
+        id="greeting"
+        className="flex flex-col items-center justify-start gap-2 select-none pt-[5vh] md:pt-[15vh] min-h-[80vh]"
+      >
         <Box className="p-5 rounded-md text-justify triangle-left bg-elims-backgroundColorLight w-auto max-w-[440px] shadow-lg shadow-elims-backgroundColorDark">
           {
             "Welcome to my space! I'm Long, a software engineer. I've created this site to share my hobbies. I hope you find valuable content here. Enjoy your visit!"
@@ -99,6 +119,20 @@ export default function Home() {
             })}
           </Box>
         </Box>
+        {scrollPosition < 100 && <JumpButton />}
+      </Box>
+
+      <Box className="m-auto w-[100%] max-w-[95%] min-h-[65vh]">
+        <Typography
+          component={"h1"}
+          id="contact"
+          fontSize={24}
+          fontWeight={600}
+          className="select-none underline underline-offset-8 decoration-elims-hoverColor"
+        >
+          Contact me
+        </Typography>
+        <FormContact />
       </Box>
     </Container>
   );

@@ -1,0 +1,140 @@
+"use client";
+import {
+  Box,
+  Button,
+  FormGroup,
+  Input,
+  FormLabel,
+  Snackbar,
+} from "@mui/material";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { useMemo, useState } from "react";
+import SendIcon from "@mui/icons-material/Send";
+import ContactService, { MailNotifyData } from "@/services/contact";
+import { ApiResponse } from "@/models/api/ApiModels";
+
+const SEND_MAIL_SUCCESS = "Messages send successfully!";
+const SEND_MAIL_FAIL = "Something wrong, please send your message later!";
+
+export default function FormContact() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<MailNotifyData>();
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [snackbarText, setSnackbarText] = useState("");
+
+  const mailService = useMemo(() => new ContactService(), []);
+
+  const onSubmit: SubmitHandler<MailNotifyData> = (data) => {
+    mailService.PostMailNotify(data).then((res: ApiResponse<any>) => {
+      if (res.success) {
+        setSnackbarText(SEND_MAIL_SUCCESS);
+      } else {
+        setSnackbarText(SEND_MAIL_FAIL);
+      }
+      setOpenSnackbar(true);
+    });
+  };
+
+  const handleCloseSnackbar = () => {
+    setOpenSnackbar(false);
+  };
+
+  return (
+    <Box
+      component={"form"}
+      autoComplete="off"
+      className="w-[100%] my-3"
+      onSubmit={handleSubmit(onSubmit)}
+    >
+      <FormGroup className="grid grid-cols-2 gap-4 gap-y-8 pt-5">
+        <FormGroup className="relative">
+          <Input
+            id="name"
+            {...register("name", { required: "Name is required" })}
+            autoComplete="off"
+            className={`text-elims-textColor bg-elims-backgroundColorLight rounded-md shadow-none border-none p-3 ${
+              errors.name ? "border-red-500" : ""
+            }`}
+            placeholder="Name"
+          />
+          {errors.name && (
+            <span className="text-elims-hoverColor absolute -top-4 left-1 text-[10px]">
+              {errors.name.message}
+            </span>
+          )}
+        </FormGroup>
+        <FormGroup className="relative">
+          <Input
+            id="mail"
+            type="email"
+            {...register("mail", {
+              required: "Email is required",
+              pattern: { value: /^\S+@\S+$/, message: "Invalid email" },
+            })}
+            autoComplete="off"
+            className={`text-elims-textColor bg-elims-backgroundColorLight rounded-md shadow-none border-none p-3 ${
+              errors.mail ? "border-red-500" : ""
+            }`}
+            placeholder="Mail"
+          />
+          {errors.mail && (
+            <span className="text-elims-hoverColor absolute -top-4 left-1 text-[10px]">
+              {errors.mail.message}
+            </span>
+          )}
+        </FormGroup>
+        <FormGroup className="relative col-span-2 ">
+          <Input
+            id="subject"
+            {...register("subject", { required: "Subject is required" })}
+            autoComplete="off"
+            className={`text-elims-textColor bg-elims-backgroundColorLight rounded-md shadow-none border-none p-3 ${
+              errors.subject ? "border-red-500" : ""
+            }`}
+            placeholder="Subject"
+          />
+          {errors.subject && (
+            <span className="text-elims-hoverColor absolute -top-4 left-1 text-[10px]">
+              {errors.subject.message}
+            </span>
+          )}
+        </FormGroup>
+        <FormGroup className="relative col-span-2 ">
+          <Input
+            id="content"
+            {...register("body", { required: "Content is required" })}
+            rows={5}
+            multiline
+            autoComplete="off"
+            className={`text-elims-textColor bg-elims-backgroundColorLight rounded-md shadow-none border-none p-3  ${
+              errors.body ? "border-red-500" : ""
+            }`}
+            placeholder="Content"
+          />
+          {errors.body && (
+            <span className="text-elims-hoverColor absolute -top-4 left-1 text-[10px]">
+              {errors.body.message}
+            </span>
+          )}
+        </FormGroup>
+      </FormGroup>
+      <Button
+        className="rounded-md mt-5 w-[100%] md:w-auto px-[100px] py-3 border-[1px] border-solid bg-elims-backgroundColorDark hover:bg-elims-hoverColor text-elims-hoverColor border-elims-hoverColor hover:bg-opacity-5 font-bold flex justify-center gap-2 items-center "
+        type="submit"
+        variant="contained"
+      >
+        Send Me
+        <SendIcon fontSize="small" className="pb-[1.5px]" />
+      </Button>
+      <Snackbar
+        open={openSnackbar}
+        onClose={handleCloseSnackbar}
+        message={snackbarText}
+        autoHideDuration={3000}
+      />
+    </Box>
+  );
+}

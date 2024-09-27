@@ -16,10 +16,10 @@ const pages = [
     name: "About me",
     href: "/about-me",
   },
-  {
-    name: "Tools",
-    href: "/tools",
-  },
+  // {
+  //   name: "Tools",
+  //   href: "/tools",
+  // },
   {
     name: "Blogs",
     href: "/blogs",
