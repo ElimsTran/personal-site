@@ -7,6 +7,7 @@ import {
   Snackbar,
   CircularProgress,
   LinearProgress,
+  Alert,
 } from "@mui/material";
 import { useForm, SubmitHandler, set } from "react-hook-form";
 import { useMemo, useState } from "react";
@@ -33,6 +34,13 @@ export default function FormContact() {
 
   const onSubmit: SubmitHandler<MailNotifyData> = (data) => {
     setDisableSend(true);
+
+    const countSend = setTimeout(() => {
+      setSnackbarText(SEND_MAIL_SUCCESS);
+      setDisableSend(false);
+      setOpenSnackbar(true);
+      reset();
+    }, 3000);
     mailService
       .PostMailNotify(data)
       // .then((res: ApiResponse<any>) => {
@@ -49,13 +57,8 @@ export default function FormContact() {
         setSnackbarText(SEND_MAIL_FAIL);
         setDisableSend(false);
         setOpenSnackbar(true);
+        clearTimeout(countSend);
       });
-
-    setTimeout(() => {
-      setDisableSend(false);
-      setOpenSnackbar(true);
-      reset();
-    }, 4000);
   };
 
   const handleCloseSnackbar = () => {
@@ -175,9 +178,17 @@ export default function FormContact() {
       <Snackbar
         open={openSnackbar}
         onClose={handleCloseSnackbar}
-        message={snackbarText}
         autoHideDuration={3000}
-      />
+        className="fixed left-3 bottom-0"
+      >
+        <Alert
+          onClose={handleCloseSnackbar}
+          severity={snackbarText == SEND_MAIL_SUCCESS ? "success" : "error"}
+          variant="filled"
+        >
+          {snackbarText}
+        </Alert>
+      </Snackbar>
     </Box>
   );
 }
