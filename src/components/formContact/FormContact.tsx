@@ -4,10 +4,11 @@ import {
   Button,
   FormGroup,
   Input,
-  FormLabel,
   Snackbar,
+  CircularProgress,
+  LinearProgress,
 } from "@mui/material";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm, SubmitHandler, set } from "react-hook-form";
 import { useMemo, useState } from "react";
 import SendIcon from "@mui/icons-material/Send";
 import ContactService, { MailNotifyData } from "@/services/contact";
@@ -18,24 +19,36 @@ const SEND_MAIL_FAIL = "Something wrong, please send your message later!";
 
 export default function FormContact() {
   const {
+    reset,
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<MailNotifyData>();
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarText, setSnackbarText] = useState("");
+  const [disableSend, setDisableSend] = useState(false);
 
   const mailService = useMemo(() => new ContactService(), []);
 
   const onSubmit: SubmitHandler<MailNotifyData> = (data) => {
-    mailService.PostMailNotify(data).then((res: ApiResponse<any>) => {
-      if (res.success) {
-        setSnackbarText(SEND_MAIL_SUCCESS);
-      } else {
+    setDisableSend(true);
+    mailService
+      .PostMailNotify(data)
+      .then((res: ApiResponse<any>) => {
+        if (res.success) {
+          setSnackbarText(SEND_MAIL_SUCCESS);
+        } else {
+          setSnackbarText(SEND_MAIL_FAIL);
+        }
+        setDisableSend(false);
+        setOpenSnackbar(true);
+        reset();
+      })
+      .catch((any) => {
         setSnackbarText(SEND_MAIL_FAIL);
-      }
-      setOpenSnackbar(true);
-    });
+        setDisableSend(false);
+        setOpenSnackbar(true);
+      });
   };
 
   const handleCloseSnackbar = () => {
@@ -59,6 +72,7 @@ export default function FormContact() {
               errors.name ? "border-red-500" : ""
             }`}
             placeholder="Name"
+            disabled={disableSend}
           />
           {errors.name && (
             <span className="text-elims-hoverColor absolute -top-4 left-1 text-[10px]">
@@ -79,6 +93,7 @@ export default function FormContact() {
               errors.mail ? "border-red-500" : ""
             }`}
             placeholder="Mail"
+            disabled={disableSend}
           />
           {errors.mail && (
             <span className="text-elims-hoverColor absolute -top-4 left-1 text-[10px]">
@@ -95,6 +110,7 @@ export default function FormContact() {
               errors.subject ? "border-red-500" : ""
             }`}
             placeholder="Subject"
+            disabled={disableSend}
           />
           {errors.subject && (
             <span className="text-elims-hoverColor absolute -top-4 left-1 text-[10px]">
@@ -113,6 +129,7 @@ export default function FormContact() {
               errors.body ? "border-red-500" : ""
             }`}
             placeholder="Content"
+            disabled={disableSend}
           />
           {errors.body && (
             <span className="text-elims-hoverColor absolute -top-4 left-1 text-[10px]">
@@ -122,12 +139,31 @@ export default function FormContact() {
         </FormGroup>
       </FormGroup>
       <Button
-        className="rounded-md mt-5 w-[100%] md:w-auto px-[100px] py-3 border-[1px] border-solid bg-elims-backgroundColorDark hover:bg-elims-hoverColor text-elims-hoverColor border-elims-hoverColor hover:bg-opacity-5 font-bold flex justify-center gap-2 items-center "
+        className="relative rounded-md mt-5 w-[100%] md:w-auto px-[100px] py-3 border-[1px] border-solid bg-elims-backgroundColorDark hover:bg-elims-hoverColor text-elims-hoverColor border-elims-hoverColor hover:bg-opacity-5 font-bold flex justify-center gap-2 items-center "
         type="submit"
         variant="contained"
+        disabled={disableSend}
       >
-        Send Me
-        <SendIcon fontSize="small" className="pb-[1.5px]" />
+        {!disableSend && (
+          <>
+            Send Me
+            <SendIcon fontSize="small" className="pb-[1.5px]" />
+          </>
+        )}
+        {disableSend && (
+          <span className="text-elims-hoverColor flex flex-col w-[100%]">
+            Sending
+            <LinearProgress
+              sx={{
+                backgroundColor: "#ffc107",
+                position: "absolute",
+                width: "94%",
+                left: "3%",
+                bottom: 5,
+              }}
+            />
+          </span>
+        )}
       </Button>
       <Snackbar
         open={openSnackbar}
