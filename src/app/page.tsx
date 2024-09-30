@@ -135,7 +135,7 @@ export default function Home() {
         </Typography>
         <Box className="grid gird-cols-1 md:grid-cols-2 p-3 my-[5vh] reveal-animation">
           <Box className="flex justify-center items-center select-none">
-            <Box className="bg-[url(/elims.jpg)] bg-no-repeat bg-contain bg-center w-[200px] h-[200px] md:w-[250px] md:h-[250px] rounded-[50%] mb-5 md:mb-2 border-solid border-elims-backgroundColorLight shadow-lg shadow-elims-backgroundColorDark"></Box>
+            <Box className="bg-[url(/Elims.jpg)] bg-no-repeat bg-contain bg-center w-[200px] h-[200px] md:w-[250px] md:h-[250px] rounded-[50%] mb-5 md:mb-2 border-solid border-elims-backgroundColorLight shadow-lg shadow-elims-backgroundColorDark"></Box>
           </Box>
           <Box className="p-5 rounded-md text-justify md:triangle-left bg-elims-backgroundColorLight w-auto shadow-lg shadow-elims-backgroundColorDark md:max-w-[400px] flex flex-col select-none">
             I am Phi Long, a software engineer currently working as a full-stack
