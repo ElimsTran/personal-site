@@ -1,5 +1,5 @@
 "use client";
-import { Box, Container, IconButton, Typography } from "@mui/material";
+import { Box, Button, Container, IconButton, Typography } from "@mui/material";
 import Image from "next/image";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -8,6 +8,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import FormContact from "@/components/formContact/FormContact";
 import JumpButton from "@/components/buttons/JumpButton";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const contacts = [
   { Icon: FacebookIcon, href: "https://www.facebook.com/PykaSmile" },
@@ -44,7 +45,7 @@ export default function Home() {
         id="greeting"
         className="flex flex-col items-center justify-start gap-2 select-none pt-[5vh] md:pt-[15vh] min-h-[80vh]"
       >
-        <Box className="p-5 rounded-md text-justify triangle-left bg-elims-backgroundColorLight w-auto max-w-[440px] shadow-lg shadow-elims-backgroundColorDark">
+        <Box className="p-5 rounded-md text-justify triangle-bottom bg-elims-backgroundColorLight w-auto max-w-[440px] shadow-lg shadow-elims-backgroundColorDark">
           {
             "Welcome to my space! I'm Long, a software engineer. I've created this site to share my hobbies. I hope you find valuable content here. Enjoy your visit!"
           }
@@ -122,7 +123,7 @@ export default function Home() {
         {scrollPosition < 100 && <JumpButton />}
       </Box>
 
-      <Box className="m-auto w-[100%] max-w-[95%] min-h-[65vh]">
+      <Box className="m-auto w-[100%] max-w-[95%]">
         <Typography
           component={"h1"}
           id="contact"
@@ -130,9 +131,52 @@ export default function Home() {
           fontWeight={600}
           className="select-none underline underline-offset-8 decoration-elims-hoverColor"
         >
-          Contact me
+          Who am I
         </Typography>
-        <FormContact />
+        <Box className="grid gird-cols-1 md:grid-cols-2 p-3 my-[5vh] reveal-animation">
+          <Box className="flex justify-center items-center select-none">
+            <Box className="bg-[url(/elims.jpg)] bg-no-repeat bg-contain bg-center w-[200px] h-[200px] md:w-[250px] md:h-[250px] rounded-[50%] mb-5 md:mb-2 border-solid border-elims-backgroundColorLight shadow-lg shadow-elims-backgroundColorDark"></Box>
+          </Box>
+          <Box className="p-5 rounded-md text-justify md:triangle-left bg-elims-backgroundColorLight w-auto shadow-lg shadow-elims-backgroundColorDark md:max-w-[400px] flex flex-col select-none">
+            I am Phi Long, a software engineer currently working as a full-stack
+            web developer. I have a strong passion for programming and believe
+            that technology makes life more convenient. This page is created to
+            share my hobbies, and I hope you find valuable information here.
+            <Link
+              href={"/about-me"}
+              className="uppercase no-underline text-center transition-all duration-300 text-[12px] rounded-md mt-5 w-auto md:w-auto py-3 border-[1px] border-solid bg-elims-backgroundColorDark hover:bg-elims-hoverColor text-elims-hoverColor border-elims-hoverColor hover:bg-opacity-5 font-bold"
+            >
+              Click here for more infomation
+            </Link>
+          </Box>
+        </Box>
+      </Box>
+
+      <Box className="m-auto w-[100%] max-w-[95%] min-h-[65vh]">
+        <Typography
+          component={"h1"}
+          id="contact"
+          fontSize={24}
+          fontWeight={600}
+          className="select-none underline underline-offset-8 decoration-elims-hoverColor "
+        >
+          Send me messages
+        </Typography>
+        <Box className="p-3 select-none py-[5vh] reveal-animation">
+          You can send me anything you want to share. <br />
+          <span>
+            Regarding the job, I would appreciate it if you could send me the
+            information by{" "}
+            <a
+              href="mailto:longbinkg@gmail.com"
+              className="no-underline text-elims-hoverColor"
+            >
+              email
+            </a>
+            .
+          </span>
+          <FormContact />
+        </Box>
       </Box>
     </Container>
   );

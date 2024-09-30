@@ -14,8 +14,9 @@ import SendIcon from "@mui/icons-material/Send";
 import ContactService, { MailNotifyData } from "@/services/contact";
 import { ApiResponse } from "@/models/api/ApiModels";
 
-const SEND_MAIL_SUCCESS = "Messages send successfully!";
-const SEND_MAIL_FAIL = "Something wrong, please send your message later!";
+const SEND_MAIL_SUCCESS =
+  "Messages sent successfully. I will respond to you later.";
+const SEND_MAIL_FAIL = "Something went wrong. Please send your message later!";
 
 export default function FormContact() {
   const {
@@ -34,21 +35,27 @@ export default function FormContact() {
     setDisableSend(true);
     mailService
       .PostMailNotify(data)
-      .then((res: ApiResponse<any>) => {
-        if (res.success) {
-          setSnackbarText(SEND_MAIL_SUCCESS);
-        } else {
-          setSnackbarText(SEND_MAIL_FAIL);
-        }
-        setDisableSend(false);
-        setOpenSnackbar(true);
-        reset();
-      })
+      // .then((res: ApiResponse<any>) => {
+      //   if (res.success) {
+      //     setSnackbarText(SEND_MAIL_SUCCESS);
+      //   } else {
+      //     setSnackbarText(SEND_MAIL_FAIL);
+      //   }
+      //   setDisableSend(false);
+      //   setOpenSnackbar(true);
+      //   reset();
+      // })
       .catch((any) => {
         setSnackbarText(SEND_MAIL_FAIL);
         setDisableSend(false);
         setOpenSnackbar(true);
       });
+
+    setTimeout(() => {
+      setDisableSend(false);
+      setOpenSnackbar(true);
+      reset();
+    }, 4000);
   };
 
   const handleCloseSnackbar = () => {
@@ -139,7 +146,7 @@ export default function FormContact() {
         </FormGroup>
       </FormGroup>
       <Button
-        className="relative rounded-md mt-5 w-[100%] md:w-auto px-[100px] py-3 border-[1px] border-solid bg-elims-backgroundColorDark hover:bg-elims-hoverColor text-elims-hoverColor border-elims-hoverColor hover:bg-opacity-5 font-bold flex justify-center gap-2 items-center "
+        className="relative text-[12px] rounded-md mt-5 w-[100%] md:w-auto px-[100px] py-3 border-[1px] border-solid bg-elims-backgroundColorDark hover:bg-elims-hoverColor text-elims-hoverColor border-elims-hoverColor hover:bg-opacity-5 font-bold flex justify-center gap-2 items-center "
         type="submit"
         variant="contained"
         disabled={disableSend}

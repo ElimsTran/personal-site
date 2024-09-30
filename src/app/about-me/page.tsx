@@ -31,12 +31,12 @@ export default function page() {
 
       <Box className="reveal-animation" id="experience">
         <Typography component={"h1"} fontSize={25} fontWeight={600}>
-          Experience
+          Experiences
         </Typography>
 
         <Box className="px-2 md:px-8 py-4">
           <Box
-            className="flex flex-row justify-between hover:cursor-pointer hover:bg-opacity-5 hover:bg-elims-hoverColor transition-all pr-2"
+            className="flex flex-row justify-between hover:cursor-pointer hover:bg-opacity-5 hover:bg-elims-hoverColor transition-all pr-2 relative"
             component={"label"}
             htmlFor="open-detail--fjn"
           >
@@ -55,6 +55,10 @@ export default function page() {
             >
               06/2021 - 09/2023
             </Typography>
+
+            <Box className="absolute right-3 bottom-0 detail_open-icon flex">
+              <ExpandMoreIcon></ExpandMoreIcon>
+            </Box>
           </Box>
 
           <input
@@ -63,12 +67,9 @@ export default function page() {
             id="open-detail--fjn"
             className=" [&:not(:checked)~.detail]:max-h-[0px] invisible absolute "
           />
-          <Box className="detail transition-all duration-1000 ease-in-out max-h-[2000px] relative">
-            <Box className="absolute right-3 -top-6 detail_open-icon flex">
-              <ExpandMoreIcon></ExpandMoreIcon>
-            </Box>
+          <Box className="detail transition-all duration-1000 ease-in-out max-h-[2000px] relative overflow-y-hidden">
             <Box className="px-2 md:px-8 py-4 text-justify">
-              <Typography component={"h2"}>Role:</Typography>
+              <Typography component={"h2"}>Roles:</Typography>
               <Typography component={"ul"} className="[&>li]:mb-6">
                 <Typography component={"li"}>
                   Contributed to the maintenance and development of web
@@ -123,6 +124,53 @@ export default function page() {
             </Box>
           </Box>
         </Box>
+
+        <Box className="px-2 md:px-8 py-4">
+          <Box
+            className="flex flex-row justify-between hover:cursor-pointer hover:bg-opacity-5 hover:bg-elims-hoverColor transition-all pr-2 relative"
+            component={"label"}
+            htmlFor="open-detail--hcmus"
+          >
+            <Box className="border-solid border-0 border-l-2 pl-2">
+              <Typography
+                component={"h2"}
+                className=" md:text-[18px] font-semibold text-elims-hoverColor"
+              >
+                Ho Chi Minh University of Science
+              </Typography>
+              <Typography component={"p"}>Software Engineering</Typography>
+            </Box>
+            <Typography
+              // className="rotate-90 translate-x-20 translate-y-12"
+              component={"p"}
+            >
+              08/2018 - 08/2022
+            </Typography>
+            <Box className="absolute right-3 bottom-0 detail_open-icon flex">
+              <ExpandMoreIcon></ExpandMoreIcon>
+            </Box>
+          </Box>
+
+          <input
+            type="checkbox"
+            name="open-detail--hcmus"
+            id="open-detail--hcmus"
+            className=" [&:not(:checked)~.detail.detail--hcmus]:max-h-[0px] invisible absolute "
+          />
+          <Box className=" detail detail--hcmus transition-all duration-1000 ease-in-out max-h-[2000px] relative overflow-y-hidden">
+            <Box className="px-2 md:px-8 py-4 text-justify">
+              <Typography component={"p"}>
+                I graduated with a degree in Software Engineering, achieving a
+                GPA of 8.33 out of 10. During my time at university, I gained a
+                solid foundation in software development, algorithms, and
+                systems design. I also had the opportunity to work on various
+                projects that enhanced my technical skills and teamwork
+                abilities. My education has equipped me with the knowledge and
+                experience necessary to succeed in the tech industry.
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
       </Box>
 
       <Box className="reveal-animation" id="educations">
@@ -171,7 +219,7 @@ export default function page() {
               className="rounded-xl shadow-lg shadow-elims-backgroundColorMedium"
             />
             <Typography component={"p"} fontSize={14}>
-              Huynh Man Đat <br />
+              Huynh Man Dat <br />
               High school
             </Typography>
           </Box>

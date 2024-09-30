@@ -43,6 +43,21 @@ body {
 }
 
 .triangle-left::before {
+  content: "";
+  border-style: solid;
+  border-width: 10px 15px 10px 0;
+  border-color: transparent #2f3045 transparent transparent;
+  position: absolute;
+  bottom: calc(50% - 10px);
+  left: -15px;
+  z-index: 10;
+}
+
+.triangle-bottom {
+  position: relative;
+}
+
+.triangle-bottom::before {
   content: "\A";
   border-style: solid;
   border-width: 15px 10px 0px 10px;
