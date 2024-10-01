@@ -40,7 +40,7 @@ export default function FormContact() {
       setDisableSend(false);
       setOpenSnackbar(true);
       reset();
-    }, 15000);
+    }, 6000);
 
     mailService
       .PostMailNotify(data)
