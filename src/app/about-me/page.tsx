@@ -53,7 +53,7 @@ export default function page() {
               // className="rotate-90 translate-x-20 translate-y-12"
               component={"p"}
             >
-              06/2021 - 09/2023
+              <span>06/2021</span> - <span>09/2023</span>
             </Typography>
 
             <Box className="absolute right-3 bottom-0 detail_open-icon flex">
@@ -175,7 +175,7 @@ export default function page() {
               component={"p"}
               className="text-nowrap"
             >
-              08/2018 - 08/2022
+              <span>08/2018</span> - <span>08/2022</span>
             </Typography>
             <Box className="absolute right-3 bottom-0 detail_open-icon flex">
               <ExpandMoreIcon></ExpandMoreIcon>
