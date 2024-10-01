@@ -21,7 +21,7 @@ const aboutMe = [
   "HCM University of Science",
   "Ho Chi Minh City",
   "Web Developer",
-  "Video Editer",
+  "Freelancer",
 ];
 
 export default function Home() {
