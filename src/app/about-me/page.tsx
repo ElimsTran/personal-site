@@ -76,9 +76,16 @@ export default function page() {
                 Brief:
               </Typography>
               <Typography component={"p"} className="pl-10 [&>*]:mb-6">
-                Worked as a web developer, contributing to the maintenance and
-                development of web applications in both front-end and back-end
-                roles.
+                I worked as a web developer at{" "}
+                <a
+                  target="_blank"
+                  href="https://www.fujinet.net/"
+                  className=" font-bold text-elims-hoverColor"
+                >
+                  Fujinet System JSC
+                </a>
+                , where I contributed to the maintenance and development of web
+                applications in both front-end and back-end roles.
               </Typography>
             </Box>
             <Box className="px-2 md:px-8 py-4 text-justify">
