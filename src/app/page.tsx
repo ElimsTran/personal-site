@@ -1,5 +1,5 @@
 "use client";
-import { Box, Button, Container, IconButton, Typography } from "@mui/material";
+import { Box, Container, IconButton, Typography } from "@mui/material";
 import Image from "next/image";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -61,15 +61,12 @@ export default function Home() {
             />
           </Box>
           <Box className="flex flex-col justify-center items-center">
-            <Typography component={"h1"} className="hidden">
-              Name and Major
-            </Typography>
             <Typography component={"h2"} fontSize={30} fontWeight={600}>
               Trần Phi Long
             </Typography>
             <Box className="gap-2 text-center">
-              <Typography component={"h1"} className="hidden">
-                Contacts
+              <Typography component={"h2"} className="hidden">
+                Contacts and social media
               </Typography>
               <Box className="border-0">
                 {contacts.map(({ Icon, href }) => {
@@ -90,7 +87,7 @@ export default function Home() {
           </Box>
 
           <Box className="flex flex-wrap justify-around ">
-            <Typography component={"h1"} className="hidden">
+            <Typography component={"h2"} className="hidden">
               Resume
             </Typography>
             <Typography component={"p"} fontSize={12}>
@@ -105,7 +102,7 @@ export default function Home() {
           </Box>
 
           <Box className="gap-1 flex flex-wrap mt-5 max-w-[330px] md:max-w-[410px] justify-around">
-            <Typography component={"h1"} className="hidden">
+            <Typography component={"h2"} className="hidden">
               Skills
             </Typography>
             {aboutMe.map((text) => {
@@ -126,7 +123,7 @@ export default function Home() {
       <Box className="m-auto w-[100%] max-w-[95%]">
         <Typography
           component={"h1"}
-          id="contact"
+          id="introduce"
           fontSize={24}
           fontWeight={600}
           className="select-none underline underline-offset-8 decoration-elims-hoverColor"

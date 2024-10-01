@@ -51,7 +51,7 @@ export default function Header() {
                     params !== page.href
                       ? "no-underline hover:text-elims-hoverColor hover:-translate-y-[2px] transition text-elims-textColor "
                       : "underline font-bold text-elims-hoverColor underline-offset-8 select-none cursor-default "
-                  }text-center text-inherit flex items-center whitespace-nowrap`}
+                  }text-center text-inherit flex items-center whitespace-nowrap select-none`}
                   href={page.href}
                 >
                   {page.name}

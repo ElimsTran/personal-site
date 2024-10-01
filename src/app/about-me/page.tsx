@@ -69,7 +69,25 @@ export default function page() {
           />
           <Box className="detail transition-all duration-1000 ease-in-out max-h-[2000px] relative overflow-y-hidden">
             <Box className="px-2 md:px-8 py-4 text-justify">
-              <Typography component={"h2"}>Roles:</Typography>
+              <Typography
+                component={"h2"}
+                className="text-elims-hoverColor font-bold"
+              >
+                Brief:
+              </Typography>
+              <Typography component={"p"} className="pl-10 [&>*]:mb-6">
+                Worked as a web developer, contributing to the maintenance and
+                development of web applications in both front-end and back-end
+                roles.
+              </Typography>
+            </Box>
+            <Box className="px-2 md:px-8 py-4 text-justify">
+              <Typography
+                component={"h2"}
+                className="text-elims-hoverColor font-bold"
+              >
+                Roles:
+              </Typography>
               <Typography component={"ul"} className="[&>li]:mb-6">
                 <Typography component={"li"}>
                   Contributed to the maintenance and development of web
@@ -102,7 +120,12 @@ export default function page() {
               </Typography>
             </Box>
             <Box className="px-2 md:px-8 py-4 text-justify">
-              <Typography component={"h2"}>Technologies:</Typography>
+              <Typography
+                component={"h2"}
+                className="text-elims-hoverColor font-bold"
+              >
+                Technologies:
+              </Typography>
               <Typography component={"ul"} className="[&>li]:mb-6">
                 <Typography component={"li"}>
                   Back-end: NET Framework, Spring Boot, MyBatis, LinQ, Restful
@@ -110,7 +133,7 @@ export default function page() {
                 </Typography>
                 <Typography component={"li"}>
                   Front-end: React JS & TS, SharePoint Web Part Framework(SPFx),
-                  Editor JS, JQuery, Bootstrap.
+                  Editor JS, JQuery, Bootstrap, HTML, CSS.
                 </Typography>
                 <Typography component={"li"}>
                   Database: SQL databases (PostgreSQL, SQL Server).
@@ -118,7 +141,7 @@ export default function page() {
                 <Typography component={"li"}>
                   Cloud Services: Microsoft Graph API, Azure Cloud Services
                   (Azure Web App Service, Azure Bot Service, Azure Function,
-                  Azure Blob Storage).
+                  Azure Blob Storage, Azure Database).
                 </Typography>
               </Typography>
             </Box>
@@ -160,14 +183,31 @@ export default function page() {
           />
           <Box className=" detail detail--hcmus transition-all duration-1000 ease-in-out max-h-[2000px] relative overflow-y-hidden">
             <Box className="px-2 md:px-8 py-4 text-justify">
-              <Typography component={"p"}>
-                I graduated with a degree in Software Engineering, achieving a
-                GPA of 8.33 out of 10. During my time at university, I gained a
-                solid foundation in software development, algorithms, and
-                systems design. I also had the opportunity to work on various
-                projects that enhanced my technical skills and teamwork
-                abilities. My education has equipped me with the knowledge and
-                experience necessary to succeed in the tech industry.
+              <Typography
+                component={"h2"}
+                className="text-elims-hoverColor font-bold"
+              >
+                Brief:
+              </Typography>
+              <Typography component={"p"} className="pl-10 [&>*]:mb-6">
+                I studied Software Engineering at Ho Chi Minh City University of
+                Science. During my time there, I gained a solid foundation in
+                software development, algorithms, and systems design. I also had
+                the opportunity to work on various projects that enhanced my
+                technical skills and teamwork abilities. My education has
+                equipped me with the knowledge and experience necessary to
+                succeed in the tech industry.
+              </Typography>
+            </Box>
+            <Box className="px-2 md:px-8 py-4 text-justify">
+              <Typography
+                component={"h2"}
+                className="text-elims-hoverColor font-bold"
+              >
+                Result:
+              </Typography>
+              <Typography component={"p"} className="pl-10 [&>*]:mb-6">
+                I graduated with a very good degree in Software Engineering.
               </Typography>
             </Box>
           </Box>
