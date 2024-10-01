@@ -40,24 +40,26 @@ export default function FormContact() {
       setDisableSend(false);
       setOpenSnackbar(true);
       reset();
-    }, 3000);
+    }, 15000);
+
     mailService
       .PostMailNotify(data)
-      // .then((res: ApiResponse<any>) => {
-      //   if (res.success) {
-      //     setSnackbarText(SEND_MAIL_SUCCESS);
-      //   } else {
-      //     setSnackbarText(SEND_MAIL_FAIL);
-      //   }
-      //   setDisableSend(false);
-      //   setOpenSnackbar(true);
-      //   reset();
-      // })
+      .then((res: ApiResponse<any>) => {
+        clearTimeout(countSend);
+        if (res.success) {
+          setSnackbarText(SEND_MAIL_SUCCESS);
+        } else {
+          setSnackbarText(SEND_MAIL_FAIL);
+        }
+        setDisableSend(false);
+        setOpenSnackbar(true);
+        reset();
+      })
       .catch((any) => {
+        clearTimeout(countSend);
         setSnackbarText(SEND_MAIL_FAIL);
         setDisableSend(false);
         setOpenSnackbar(true);
-        clearTimeout(countSend);
       });
   };
 

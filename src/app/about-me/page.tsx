@@ -47,7 +47,7 @@ export default function page() {
               >
                 Fujinet Systems JSC
               </Typography>
-              <Typography component={"p"}>Web developer</Typography>
+              <Typography component={"p"}>Web Developer</Typography>
             </Box>
             <Typography
               // className="rotate-90 translate-x-20 translate-y-12"
@@ -136,13 +136,14 @@ export default function page() {
                 component={"h2"}
                 className=" md:text-[18px] font-semibold text-elims-hoverColor"
               >
-                Ho Chi Minh University of Science
+                HCM University of Science
               </Typography>
               <Typography component={"p"}>Software Engineering</Typography>
             </Box>
             <Typography
               // className="rotate-90 translate-x-20 translate-y-12"
               component={"p"}
+              className="text-nowrap"
             >
               08/2018 - 08/2022
             </Typography>

@@ -163,15 +163,15 @@ export default function Home() {
           Send me messages
         </Typography>
         <Box className="p-3 select-none py-[5vh] reveal-animation">
-          You can send me anything you want to share. <br />
+          Send me anything you want to share.
+          <br />
           <span>
-            Regarding the job, I would appreciate it if you could send me the
-            information by{" "}
+            Regarding the job,{" "}
             <a
               href="mailto:longbinkg@gmail.com"
               className="no-underline text-elims-hoverColor"
             >
-              email
+              email it to me
             </a>
             .
           </span>
