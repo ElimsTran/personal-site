@@ -10,7 +10,7 @@ import {
   Alert,
 } from "@mui/material";
 import { useForm, SubmitHandler, set } from "react-hook-form";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import SendIcon from "@mui/icons-material/Send";
 import ContactService, { MailNotifyData } from "@/services/contact";
 import { ApiResponse } from "@/models/api/ApiModels";
@@ -35,17 +35,9 @@ export default function FormContact() {
   const onSubmit: SubmitHandler<MailNotifyData> = (data) => {
     setDisableSend(true);
 
-    const countSend = setTimeout(() => {
-      setSnackbarText(SEND_MAIL_SUCCESS);
-      setDisableSend(false);
-      setOpenSnackbar(true);
-      reset();
-    }, 6000);
-
     mailService
       .PostMailNotify(data)
       .then((res: ApiResponse<any>) => {
-        clearTimeout(countSend);
         if (res.success) {
           setSnackbarText(SEND_MAIL_SUCCESS);
         } else {
@@ -56,7 +48,6 @@ export default function FormContact() {
         reset();
       })
       .catch((any) => {
-        clearTimeout(countSend);
         setSnackbarText(SEND_MAIL_FAIL);
         setDisableSend(false);
         setOpenSnackbar(true);
