@@ -6,7 +6,7 @@ export default function page() {
     <Container
       component={"main"}
       maxWidth="md"
-      className="flex flex-col py-10 select-none"
+      className="flex flex-col pt-2 select-none"
     >
       <Box className="reveal-animation" id="introduce">
         <Typography component={"h1"} fontSize={25} fontWeight={600}>
