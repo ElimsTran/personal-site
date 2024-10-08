@@ -77,7 +77,6 @@ export default function Header() {
           </Box>
         </Container>
       </Box>
-      <SpotifyPlaylist link="https://open.spotify.com/playlist/5iklb65eaqPsfi5jRJyoZA?si=12b8e4edf7e24f6e" />
     </>
   );
 }

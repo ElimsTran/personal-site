@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/common/Header";
 import { Box, ThemeProvider } from "@mui/material";
@@ -8,8 +7,7 @@ import Footer from "@/components/common/Footer";
 import { Suspense } from "react";
 import Loading from "./loading";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-
-const inter = Inter({ subsets: ["latin"] });
+import SpotifyPlaylist from "@/components/utilities/SpotifyPlaylist";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://elims-zone.xyz"),
@@ -50,6 +48,7 @@ export default function RootLayout({
               {children}
             </Box>
             <SpeedInsights />
+            <SpotifyPlaylist link="https://open.spotify.com/playlist/5iklb65eaqPsfi5jRJyoZA?si=12b8e4edf7e24f6e" />
             <Footer />
           </Suspense>
         </ThemeProvider>

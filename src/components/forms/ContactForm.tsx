@@ -5,21 +5,20 @@ import {
   FormGroup,
   Input,
   Snackbar,
-  CircularProgress,
   LinearProgress,
   Alert,
 } from "@mui/material";
-import { useForm, SubmitHandler, set } from "react-hook-form";
-import { useEffect, useMemo, useState } from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { useMemo, useState } from "react";
 import SendIcon from "@mui/icons-material/Send";
-import ContactService, { MailNotifyData } from "@/services/contact";
+import ContactService, { MailNotifyData } from "@/services/ContactService";
 import { ApiResponse } from "@/models/api/ApiModels";
 
 const SEND_MAIL_SUCCESS =
   "Messages sent successfully. I will respond to you later.";
 const SEND_MAIL_FAIL = "Something went wrong. Please send your message later!";
 
-export default function FormContact() {
+export default function ContactForm() {
   const {
     reset,
     register,

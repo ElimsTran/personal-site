@@ -5,7 +5,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import FormContact from "@/components/formContact/FormContact";
+import ContactForm from "@/components/forms/ContactForm";
 import JumpButton from "@/components/buttons/JumpButton";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -58,6 +58,7 @@ export default function Home() {
               loading={"eager"}
               width={150}
               height={150}
+              unoptimized
             />
           </Box>
           <Box className="flex flex-col justify-center items-center">
@@ -172,7 +173,7 @@ export default function Home() {
             </a>
             .
           </span>
-          <FormContact />
+          <ContactForm />
         </Box>
       </Box>
     </Container>

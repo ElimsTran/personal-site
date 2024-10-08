@@ -38,6 +38,102 @@ export default function page() {
           <Box
             className="flex flex-row justify-between hover:cursor-pointer hover:bg-opacity-5 hover:bg-elims-hoverColor transition-all pr-2 relative"
             component={"label"}
+            htmlFor="open-detail--9bricks"
+          >
+            <Box className="border-solid border-0 border-l-2 pl-2">
+              <Typography
+                component={"h2"}
+                className=" md:text-[18px] font-semibold text-elims-hoverColor"
+              >
+                9Bricks
+              </Typography>
+              <Typography component={"p"}>Web Developer</Typography>
+            </Box>
+            <Typography
+              // className="rotate-90 translate-x-20 translate-y-12"
+              component={"p"}
+            >
+              <span>12/2023</span> - <span>05/2024</span>
+            </Typography>
+
+            <Box className="absolute right-3 bottom-0 detail_open-icon flex">
+              <ExpandMoreIcon></ExpandMoreIcon>
+            </Box>
+          </Box>
+
+          <input
+            type="checkbox"
+            name="open-detail--9bricks"
+            id="open-detail--9bricks"
+            className=" [&:not(:checked)~.detail]:max-h-[0px] invisible absolute "
+          />
+          <Box className="detail transition-all duration-1000 ease-in-out max-h-[2000px] relative overflow-y-hidden">
+            <Box className="px-2 md:px-8 py-4 text-justify">
+              <Typography
+                component={"h2"}
+                className="text-elims-hoverColor font-bold"
+              >
+                Brief:
+              </Typography>
+              <Typography component={"p"} className="pl-10 [&>*]:mb-6">
+                I worked as a freelance web developer at{" "}
+                <a
+                  target="_blank"
+                  href="https://www.9bricks.com/"
+                  className=" font-bold text-elims-hoverColor"
+                >
+                  9Bricks
+                </a>
+                , where I contributed to the development of UI web applications
+                in a front-end role.
+              </Typography>
+            </Box>
+            <Box className="px-2 md:px-8 py-4 text-justify">
+              <Typography
+                component={"h2"}
+                className="text-elims-hoverColor font-bold"
+              >
+                Roles:
+              </Typography>
+              <Typography component={"ul"} className="[&>li]:mb-6">
+                <Typography component={"li"}>
+                  Contributed to the development of web pages based on Figma
+                  designs, ensuring a seamless and engaging user experience.
+                </Typography>
+                <Typography component={"li"}>
+                  Integrated data retrieval processes as outlined in Postman
+                  documentation provided by stakeholders, facilitating effective
+                  communication with APIs.
+                </Typography>
+                <Typography component={"li"}>
+                  Migrated user interfaces from WordPress to Next.js to
+                  integrate advanced features and enhance overall performance.
+                </Typography>
+              </Typography>
+            </Box>
+            <Box className="px-2 md:px-8 py-4 text-justify">
+              <Typography
+                component={"h2"}
+                className="text-elims-hoverColor font-bold"
+              >
+                Technologies:
+              </Typography>
+              <Typography component={"ul"} className="[&>li]:mb-6">
+                <Typography component={"li"}>
+                  Front-end: NextJS, Tailwind, HTML, CSS, SCSS, Axios.
+                </Typography>
+                <Typography component={"li"}>
+                  Back-end: Express JS, Cloudflare, Amazon S3.
+                </Typography>
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
+
+        <Box className="px-2 md:px-8 py-4">
+          <Box
+            className="flex flex-row justify-between hover:cursor-pointer hover:bg-opacity-5 hover:bg-elims-hoverColor transition-all pr-2 relative"
+            component={"label"}
             htmlFor="open-detail--fjn"
           >
             <Box className="border-solid border-0 border-l-2 pl-2">
