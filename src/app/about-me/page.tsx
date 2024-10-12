@@ -10,7 +10,7 @@ export default function page() {
     >
       <Box className="reveal-animation" id="introduce">
         <Typography component={"h1"} fontSize={25} fontWeight={600}>
-          Introduce
+          Introduction
         </Typography>
         <Typography component={"p"} className="px-2 md:px-8 py-4 text-justify ">
           Hi you guys, I am a software engineer from Việt Nam, currently working
