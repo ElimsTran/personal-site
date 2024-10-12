@@ -3,6 +3,7 @@ import React, { useMemo } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Button, Container, Box, FormGroup, Input } from "@mui/material";
 import LoginService, { LoginData } from "@/services/LoginService";
+import { LOCAL_STORAGE__ACS_TOKEN, LOCAL_STORAGE__RF_TOKEN } from "@/constants";
 
 const LoginForm = () => {
   const {
@@ -13,8 +14,18 @@ const LoginForm = () => {
 
   const loginService = useMemo(() => new LoginService(), []);
 
-  const onSubmit: SubmitHandler<LoginData> = (data) => {
-    loginService.PostLogin(data);
+  const onSubmit: SubmitHandler<LoginData> = async (data) => {
+    const res = await loginService.PostLogin(data);
+    if (res.success) {
+      localStorage.setItem(
+        LOCAL_STORAGE__ACS_TOKEN,
+        res.data?.accessToken ?? ""
+      );
+      localStorage.setItem(
+        LOCAL_STORAGE__RF_TOKEN,
+        res.data?.refeshToken ?? ""
+      );
+    }
   };
 
   return (

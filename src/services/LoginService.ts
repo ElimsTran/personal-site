@@ -7,7 +7,7 @@ export interface LoginData {
   password: string;
 }
 export interface TokenResponse {
-  acessToken: string;
+  accessToken: string;
   refeshToken: string;
 }
 

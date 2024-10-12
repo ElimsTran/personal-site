@@ -44,9 +44,7 @@ export default function RootLayout({
         <ThemeProvider theme={theme}>
           <Suspense fallback={<Loading />}>
             <Header />
-            <Box className="text-elims-textColor py-5 min-h-[calc(100vh-160px)]">
-              {children}
-            </Box>
+            <Box className=" py-5 min-h-[calc(100vh-160px)]">{children}</Box>
             <SpeedInsights />
             <SpotifyPlaylist link="https://open.spotify.com/playlist/5iklb65eaqPsfi5jRJyoZA?si=12b8e4edf7e24f6e" />
             <Footer />

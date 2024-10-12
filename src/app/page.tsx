@@ -40,7 +40,11 @@ export default function Home() {
   }, []);
 
   return (
-    <Container component={"main"} maxWidth="md" className="flex flex-col ">
+    <Container
+      component={"main"}
+      maxWidth="md"
+      className="flex flex-col text-elims-textColor "
+    >
       <Box
         id="greeting"
         className="flex flex-col items-center justify-start gap-2 select-none pt-[5vh] md:pt-[15vh] min-h-[80vh]"

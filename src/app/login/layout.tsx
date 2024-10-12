@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About me",
+  title: "Login",
 };
 
 export default function RootLayout({

@@ -10,14 +10,14 @@
 }
 
 :root {
-  font-family: "Prompt-Regular", sans-serif;
+  font-family: "Prompt-Regular", sans-serif !important;
   --background-color: #181928;
   --text-color: #FFF;
 }
 
 body {
   background: var(--background-color);
-  text: var(--text-color) !important;
+
 }
 
 *::-webkit-scrollbar {
@@ -101,4 +101,9 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.codex-editor__redactor,
+.ce-block__content {
+  color: var(--text-color) !important;
 }
