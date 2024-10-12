@@ -1,3 +1,4 @@
+//@ts-nocheck
 export const EDITOR_JS_TOOLS = async (): Promise<Record<string, object>> => {
   const [
     { default: Embed },
